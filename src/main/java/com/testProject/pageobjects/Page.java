@@ -1,4 +1,4 @@
-package pageobjects;
+package com.testProject.pageobjects;
 
 public abstract class Page {
 

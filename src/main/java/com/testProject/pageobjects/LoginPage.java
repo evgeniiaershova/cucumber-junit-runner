@@ -1,18 +1,23 @@
-package pageobjects;
+package com.testProject.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import javax.annotation.PostConstruct;
 
+@Component
 public class LoginPage extends Page{
+
+    @Autowired
     private WebDriver wd;
 
-    public LoginPage(WebDriver wd) {
-        this.wd = wd;
+    @PostConstruct
+    public void initLoginPage() {
         PageFactory.initElements(wd, this);
     }
 
